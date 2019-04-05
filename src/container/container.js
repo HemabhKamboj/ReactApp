@@ -1,28 +1,33 @@
 import React, {Component} from 'react'
 
 
+
 class Container1 extends Component {
-    Arr1 = [
-        { id :1, text: 'text1', number : 1},
-        { id :2, text: 'text2', number : 2},
-        { id :3, text: 'text3', number : 3},
-        { id :4, text: 'text4', number : 4},
-        { id :5, text: 'text5', number : 5}
 
-    ]
+    state = {
+        value: ''
+    }     
 
-    RenderListItem = (props) => (
-        <div>
-            {props.item.text}
-            <p>{props.item.number}</p>
-        </div>
-    )
+        handleChange = (event) => (
+            this.setState({ value: event.target.value})
+        )
+
+        handleSubmit = (event) => {
+            event.preventDefault()
+            console.log(this.state.value)
+
+        }
+
 
    render () {
     return (
         <div>
-            {this.Arr1.map((item, index) => (<this.RenderListItem key={item.id} item={item}/> ) ) }
-            
+        {this.state.value}
+        <form onSubmit= {this.handleSubmit}>
+            <label>Name </label>
+            <input id="name" onChange={this.handleChange} type="text" />
+            <button type = "submit"> Submit</button>        
+        </form>
         </div>
     )}
 
