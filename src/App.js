@@ -1,32 +1,14 @@
 import React, { Component } from 'react';
-// import './App.css'
-// import * as styles from './styles'
-
-
+import Component1 from './functional/component1'
 
 class App extends Component {
-  state = {
-    counter:0
-  }
-
-  increment = () => (
-    this.setState({counter:5})
-  )
+ 
   render() {
     
     return (
       <div className="App">
-
-      <button onClick={()=> this.increment()}>Button </button>
-      <div>
-        Div 1 {this.state.counter}
-      </div>
-      <div>
-        Div2
-      </div>
-      <div> 
-        Div3 
-      </div>
+      React
+      <Component1 />
       </div>
 
     );
