@@ -2,7 +2,8 @@ import React from 'react'
 
 const Component1 = props => (
     <div>
-        Component 1
+    {props.name}
+    {props.age}
     </div>
 
 );

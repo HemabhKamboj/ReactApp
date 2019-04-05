@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
       React
-      <Component1 />
+      <Component1  name= "Hemabh" age= { 20}/>
       </div>
 
     );
