@@ -2,34 +2,27 @@ import React, {Component} from 'react'
 
 
 class Container1 extends Component {
-    constructor(props)
-    {
-        super(props)
-        this.state = {
-            stateprop1 : "Our Initial State",
-            stateprop2 : 5
+    Arr1 = [
+        { id :1, text: 'text1', number : 1},
+        { id :2, text: 'text2', number : 2},
+        { id :3, text: 'text3', number : 3},
+        { id :4, text: 'text4', number : 4},
+        { id :5, text: 'text5', number : 5}
 
-        }
-    }
+    ]
 
-        changeState = () => (
-            this.setState({ stateprop2: this.state.stateprop2 + 1,
-                            stateprop1: this.state.stateprop1 + "H"})
-        )
+    RenderListItem = (props) => (
+        <div>
+            {props.item.text}
+            <p>{props.item.number}</p>
+        </div>
+    )
 
-        changeState2 = () => (
-            this.setState({ stateprop1: this.state.stateprop1 + "H"})
-        )
    render () {
     return (
         <div>
-            <button onClick = {() => this.changeState()}> Change State </button>
-            <button onClick = {() => this.changeState2()}> Change State </button>
-            <br />
-
-            {this.state.stateprop2}
-            <br />
-            {this.state.stateprop1}
+            {this.Arr1.map((item, index) => (<this.RenderListItem key={item.id} item={item}/> ) ) }
+            
         </div>
     )}
 
